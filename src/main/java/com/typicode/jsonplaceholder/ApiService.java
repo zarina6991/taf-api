@@ -13,4 +13,12 @@ public class ApiService {
     public int getStatusCode() {
         return response.getStatusCode();
     }
+
+    public void doPutRequest() {
+        response = given().when().put("https://jsonplaceholder.typicode.com/posts/1");
+    }
+
+    public void doPatchRequest() {
+        response = given().when().patch("https://jsonplaceholder.typicode.com/posts/1");
+    }
 }

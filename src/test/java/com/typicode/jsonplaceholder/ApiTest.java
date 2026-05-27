@@ -48,4 +48,20 @@ public class ApiTest {
         Response response = given().body(BODY).when().delete("https://jsonplaceholder.typicode.com/posts/1");
         response.then().log().all().statusCode(200);
     }
+
+    @Test
+    public void testPut() {
+        ApiService apiService = new ApiService();
+        apiService.doPutRequest();
+        apiService.getStatusCode();
+        Assertions.assertEquals(200, apiService.getStatusCode());
+    }
+
+    @Test
+    public void testPatch() {
+        ApiService apiService = new ApiService();
+        apiService.doPatchRequest();
+        apiService.getStatusCode();
+        Assertions.assertEquals(200, apiService.getStatusCode());
+    }
 }
